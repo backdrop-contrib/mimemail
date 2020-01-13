@@ -213,13 +213,12 @@ function mimemail_get_engines() {
  *   Returns TRUE if the operation was successful or FALSE if it was not.
  */
 function mimemail_mailengine($op, $message = array()) {
-  module_load_include('inc', 'mimemail');
-
   switch ($op) {
     case 'list':
       $engine = array(
         'name' => t('Mime Mail'),
         'description' => t("Default mailing engine."),
+        'mail_class' => 'MimeMailSystem',
       );
       return $engine;
     case 'settings':
