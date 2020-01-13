@@ -10,8 +10,8 @@
  */
 function mimemail_enable() {
   config_set('system.mail','mimemail','MimeMailSystem');
-	$line_endings = settings_get('mail_line_endings', MAIL_LINE_ENDINGS);
-	config_set('mimemail.settings','mimemail_crlf',$line_endings);
+  $line_endings = settings_get('mail_line_endings', MAIL_LINE_ENDINGS);
+  config_set('mimemail.settings','mimemail_crlf',$line_endings);
   user_role_grant_permissions(BACKDROP_AUTHENTICATED_ROLE, array('edit mimemail user settings'));
 }
 
@@ -19,7 +19,7 @@ function mimemail_enable() {
  * Implements hook_disable().
  */
 function mimemail_disable() {
-	config_set('system.mail','mimemail','');
+  config_clear('system.mail','mimemail');
 }
 
 
