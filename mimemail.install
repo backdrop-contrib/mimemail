@@ -22,8 +22,7 @@ function mimemail_disable() {
   config_clear('system.mail','mimemail');
 }
 
-
-function migrate_update_1000() {
+function mimemail_update_1000() {
   $config = config('migrate.settings');
 
   // migrate variables
