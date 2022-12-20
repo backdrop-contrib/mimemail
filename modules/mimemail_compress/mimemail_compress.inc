@@ -181,7 +181,7 @@ class mimemail_compress {
       $node->parentNode->removeChild($node);
     }
 
-    if (variable_get('mimemail_preserve_class', 0) == FALSE) {
+    if (config_get('mimemail.settings', 'mimemail_preserve_class') == FALSE) {
       $nodes = $xpath->query('//*[@class]');
       foreach ($nodes as $node) {
         $node->removeAttribute('class');
