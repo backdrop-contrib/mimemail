@@ -23,7 +23,7 @@ function mimemail_disable() {
 }
 
 function mimemail_update_1000() {
-  $config = config('migrate.settings');
+  $config = config('mimemail.settings');
 
   // migrate variables
   $config->set('mimemail_crlf', update_variable_get('mimemail_crlf'));
