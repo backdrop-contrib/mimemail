@@ -22,9 +22,8 @@ function mimemail_disable() {
   config_clear('system.mail','mimemail');
 }
 
-
-function migrate_update_1000() {
-  $config = config('migrate.settings');
+function mimemail_update_1000() {
+  $config = config('mimemail.settings');
 
   // migrate variables
   $config->set('mimemail_crlf', update_variable_get('mimemail_crlf'));
