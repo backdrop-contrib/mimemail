@@ -71,7 +71,7 @@ mailsystem_set(array(
 ));
 ```
 
-You send email with `backdrop_mail()` and specify following optional parameters 
+You can send email with `backdrop_mail()` and specify following optional parameters 
 (5th argument) to build the email and send it:
 - 'plain':
     Boolean, whether to send messages in plaintext-only (optional, default is FALSE).
