@@ -49,7 +49,7 @@ function mimemail_admin_settings() {
     '#type'          => 'checkbox',
     '#title'         => t('Include site style sheets'),
     '#default_value' => config_get('mimemail.settings', 'mimemail_sitestyle'),
-    '#description'   => t('Gather all style sheets when no mail.css found in the default theme directory.'),
+    '#description'   => t('Gather all style sheets when no mail.css found in the theme directory. If the module Mail System is enabled, Mime Mail will look for css files in the folder of the theme selected in the Mail System settings. Otherwise the default theme folder will be used.'),
     '#disabled'      => $disable_sitestyle,
   );
   $form['mimemail']['mimemail_textonly'] = array(
