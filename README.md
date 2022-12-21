@@ -127,7 +127,7 @@ different themes. You can choose the following settings to render the email:
 - 'current': Theme currently used by the user who runs drupal_mail().
 - 'default': Default theme, obtained via variable theme_default.
 - 'domain': Theme obtained via Domain Theme module.
-or any other active theme.
+- Or any other active theme.
 
 Images with absolute URL will be available as remote content. To embed images
 into emails you have to use a relative URL or an internal path. Due to security
