@@ -73,13 +73,13 @@ mailsystem_set(array(
 
 You send email with `backdrop_mail()` and specify following optional parameters 
 (5th argument) to build the email and send it:
-  'plain':
+- 'plain':
     Boolean, whether to send messages in plaintext-only (optional, default is FALSE).
-  'plaintext':
+- 'plaintext':
     Plaintext portion of a multipart email (optional).
-  'attachments':
+- 'attachments':
     Array of arrays with the path or content, name and MIME type of the file (optional).
-  'headers':
+- 'headers':
     A keyed array with headers (optional).
 
 You can set these in $params either before calling `backdrop_mail()` or in 
@@ -113,10 +113,10 @@ CSS selectors. To use the Compressor, just enable it.
 To create a custom mail template copy the mimemail-message.tpl.php file from
 the mimemail/theme directory into your default theme's folder. Both general and
 by-mailkey theming can be performed:
-  `mimemail-message--[module]--[key].tpl.php` (for messages with a specific module and key)
-  `mimemail-message--[module].tpl.php` (for messages with a specific module)
-  `mimemail-message--[key].tpl.php` (for messages with a specific key)
-  `mimemail-message.tpl.php` (for all messages)
+- `mimemail-message--[module]--[key].tpl.php` (for messages with a specific module and key)
+- `mimemail-message--[module].tpl.php` (for messages with a specific module)
+- `mimemail-message--[key].tpl.php` (for messages with a specific key)
+- `mimemail-message.tpl.php` (for all messages)
 
 NOTE: if you place any of those suggested template files in your theme's `template` folder, 
 Mail System will likely ignore the setting "Theme to render rich text emails". Instead, 
@@ -124,9 +124,9 @@ the CSS stylesheets for the current page path theme will be used. This seems to 
 
 When the module Mail System is installed, messages can be rendered using 
 different themes. You can choose the following settings to render the email:
-  'current': Theme currently used by the user who runs drupal_mail().
-  'default': Default theme, obtained via variable theme_default.
-  'domain': Theme obtained via Domain Theme module.
+- 'current': Theme currently used by the user who runs drupal_mail().
+- 'default': Default theme, obtained via variable theme_default.
+- 'domain': Theme obtained via Domain Theme module.
 or any other active theme.
 
 Images with absolute URL will be available as remote content. To embed images
@@ -135,10 +135,10 @@ concerns, only files residing in the public file system (e.g sites/default/files
 can be used by default.
 
 For example:
-  instead of `http://www.mysite.com/sites/default/files/mypicture.jpg`
-  use `/home/www/public_html/drupal/sites/default/files/mypicture.jpg`
-  or `/sites/default/files/mypicture.jpg`
-  or `public://mypicture.jpg`
+- instead of `http://www.mysite.com/sites/default/files/mypicture.jpg`
+- use `/home/www/public_html/drupal/sites/default/files/mypicture.jpg`
+- or `/sites/default/files/mypicture.jpg`
+- or `public://mypicture.jpg`
 
 The 'send arbitrary files' permission allows you to attach or embed files located
 outside Backdrop's public files directory. Note that this has security implications:
