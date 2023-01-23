@@ -151,8 +151,9 @@ file in this directory for complete text.
     
 ## Current Maintainers for Backdrop
 
-- Graham Oliver (github.com/Graham-72/)
-- argiepiano https://github.com/argiepiano
++ Graham Oliver (github.com/Graham-72/)
++ argiepiano https://github.com/argiepiano
+
 ## Credits
 
 ### Port to Backdrop
