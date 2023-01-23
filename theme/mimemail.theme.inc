@@ -32,8 +32,15 @@ function mimemail_theme_theme() {
  * @see mimemail-message.tpl.php
  */
 function template_preprocess_mimemail_message(&$variables) {
-  // get the name of the current theme from config.
-  $theme = config_get('system.core','theme_default');
+  if (module_exists('mailsystem')) {
+    // If mailsystem is enabled, get the mailsystem_theme setting.
+    $theme = mailsystem_get_mail_theme();
+  }
+  else {
+    // Get the name of the current theme from config.
+    $theme = config_get('system.core','theme_default');
+  }
+
   $themepath = backdrop_get_path('theme', $theme);
 
   $sitestyle = config_get('mimemail.settings','mimemail_sitestyle');
