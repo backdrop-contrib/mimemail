@@ -71,7 +71,7 @@ mailsystem_set(array(
 ));
 ```
 
-You can send email with `backdrop_mail()` and specify following optional parameters 
+You can send email with `backdrop_mail()` and specify the following optional parameters 
 (5th argument) to build the email and send it:
 - 'plain':
     Boolean, whether to send messages in plaintext-only (optional, default is FALSE).
@@ -118,13 +118,13 @@ by-mailkey theming can be performed:
 - `mimemail-message--[key].tpl.php` (for messages with a specific key)
 - `mimemail-message.tpl.php` (for all messages)
 
-NOTE: if you place any of those suggested template files in your theme's `template` folder, 
+NOTE: if you place any of those suggested template files in your theme's `templates` folder, 
 Mail System will likely ignore the setting "Theme to render rich text emails". Instead, 
 the CSS stylesheets for the current page path theme will be used. This seems to be a bug in Mail System.
 
 When the module Mail System is installed, messages can be rendered using 
 different themes. You can choose the following settings to render the email:
-- 'current': Theme currently used by the user who runs drupal_mail().
+- 'current': Theme currently used by the user who runs backdrop_mail().
 - 'default': Default theme, obtained via variable theme_default.
 - 'domain': Theme obtained via Domain Theme module.
 - Or any other active theme.
@@ -136,7 +136,7 @@ can be used by default.
 
 For example:
 - instead of `http://www.mysite.com/sites/default/files/mypicture.jpg`
-- use `/home/www/public_html/drupal/sites/default/files/mypicture.jpg`
+- use `/home/www/public_html/backdrop/sites/default/files/mypicture.jpg`
 - or `/sites/default/files/mypicture.jpg`
 - or `public://mypicture.jpg`
 
@@ -149,10 +149,10 @@ arbitrary means even your settings.php! Give to trusted roles only!
 This project is GPL v2 software. See the LICENSE.txt 
 file in this directory for complete text.
     
-## Current Maintainer for Backdrop
+## Current Maintainers for Backdrop
 
-Graham Oliver (github.com/Graham-72/)
-
+- Graham Oliver (github.com/Graham-72/)
+- argiepiano https://github.com/argiepiano
 ## Credits
 
 ### Port to Backdrop
