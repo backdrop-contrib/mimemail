@@ -196,10 +196,8 @@ class mimemail_compress {
   /**
    * Converts a string to lowercase.
    *
-   * This is a helper method for the previous method when it is converting
-   * strings to lower case. This is being done this way to support PHP versions
-   * from 5.2.4 (the minimum version Druapl 7 supports) to PHP 7.2 (the current
-   * version at the time of this writing).
+   * This is a helper method to convert a match passed by preg_replace_callback
+   * to lower case. 
    *
    * @param array $matches
    *   The results from a call to preg_replace_callback().
@@ -285,8 +283,8 @@ class mimemail_compress {
     );
 
     $result = preg_replace($search, $replace, trim($selector));
-    $result = preg_replace_callback('/(\w+)?\#([\w\-]+)/', 'mimemail_compress::replace_id_attributes', $result);
-    $result = preg_replace_callback('/(\w+|\*)?((\.[\w\-]+)+)/', 'mimemail_compress::replace_class_attributes', $result);
+    $result = preg_replace_callback('/(\w+)?\#([\w\-]+)/', array($this, 'replace_id_attributes'), $result);
+    $result = preg_replace_callback('/(\w+|\*)?((\.[\w\-]+)+)/', array($this, 'replace_class_attributes'), $result);
 
     return '//' . $result;
   }

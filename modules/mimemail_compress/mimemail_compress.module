@@ -1,12 +1,13 @@
 <?php
-
 /**
  * @file
  * Component module for sending Mime-encoded emails.
  */
 
 /**
- * Implements hook_mail_alter().
+ * Implements hook_mail_post_process().
+ * 
+ * This is an undocumented hook provided by mimemail in mimemail_prepare_mail().
  */
 function mimemail_compress_mail_post_process(&$message) {
   module_load_include('inc', 'mimemail_compress');
