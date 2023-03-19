@@ -152,14 +152,16 @@ function mimemail_mail($key, &$message, $params) {
   $options = array('clear' => TRUE);
 
   // Prepare the array of the attachments.
-  $attachments = array();
-  $attachments_string = trim($params['attachments']);
-  if (!empty($attachments_string)) {
-    $attachment_lines = array_filter(explode("\n", trim($attachments_string)));
-    foreach ($attachment_lines as $filepath) {
-      $attachments[] = array(
-        'filepath' => trim($filepath),
-      );
+  $attachments = $params['attachments'];
+  if (is_string($attachments)) {
+    $attachments_string = trim($params['attachments']);
+    if (!empty($attachments_string)) {
+      $attachment_lines = array_filter(explode("\n", trim($attachments_string)));
+      foreach ($attachment_lines as $filepath) {
+        $attachments[] = array(
+          'filepath' => trim($filepath),
+        );
+      }
     }
   }
 
