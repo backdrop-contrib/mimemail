@@ -23,7 +23,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <?php if ($css): ?>
-    <style type="text/css">
+    <style>
       <!--
       <?php print $css ?>
       -->

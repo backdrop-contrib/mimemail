@@ -117,26 +117,26 @@ function mimemail_admin_settings() {
     $engine_options[$module] = $engine['name'] . ': ' . $engine['description'];
   }
   // Hide the settings if only 1 engine is available.
+  $mimemail_engine = config_get('mimemail.settings', 'mimemail_engine');
   if (count($engines) == 1) {
     reset($engines);
-    config_get('mimemail.settings', 'mimemail_engine');
     $form['mimemail']['mimemail_engine'] = array(
       '#type' => 'hidden',
-      '#value' => config_get('mimemail.settings', 'mimemail_engine'),
+      '#value' => $mimemail_engine,
     );
   }
   else {
     $form['mimemail']['mimemail_engine'] = array(
       '#type' => 'select',
       '#title' => t('Email engine'),
-      '#default_value' => config_get('mimemail.settings', 'mimemail_engine'),
+      '#default_value' => $mimemail_engine,
       '#options' => $engine_options,
       '#description' => t('Choose an engine for sending mails from your site.'),
     );
   }
 
-  if (config_get('mimemail.settings', 'mimemail_engine')) {
-    $settings = module_invoke(config_get('mimemail.settings', 'mimemail_engine'), 'mailengine', 'settings');
+  if ($mimemail_engine) {
+    $settings = module_invoke($mimemail_engine, 'mailengine', 'settings');
     if ($settings) {
       $form['mimemail']['engine_settings'] = array(
         '#type' => 'fieldset',
