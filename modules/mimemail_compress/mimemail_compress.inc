@@ -12,7 +12,7 @@
  */
 function mimemail_compress_clean_message($message) {
   $parts = array();
-  preg_match('|(<style[^>]+)>(.*)</style>|mis', $message, $matches);
+  preg_match('|(<style[^>]*)>(.*)</style>|mis', $message, $matches);
   if (isset($matches[0]) && isset($matches[2])) {
     $css = str_replace('<!--', '', $matches[2]);
     $css = str_replace('-->', '', $css);
