@@ -197,7 +197,13 @@ function _mimemail_file($url = NULL, $content = NULL, $name = '', $type = '', $d
     if ($is_file) {
       $access = user_access('send arbitrary files');
       $public_path = file_default_scheme() . '://';
-      $in_public_path = strpos(@backdrop_realpath($file), backdrop_realpath($public_path)) === 0;
+      $file_realpath = @backdrop_realpath($file);
+      $public_realpath = backdrop_realpath($public_path);
+      $in_public_path = FALSE;
+      if ($file_realpath !== FALSE && $public_realpath !== FALSE) {
+        $public_prefix = rtrim($public_realpath, DIRECTORY_SEPARATOR) . DIRECTORY_SEPARATOR;
+        $in_public_path = strpos($file_realpath, $public_prefix) === 0;
+      }
       if (!$in_public_path && !$access) {
         return $url;
       }
